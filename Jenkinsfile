@@ -23,6 +23,26 @@ steps{
    build 'deploy-to-server'
 }
 }
+stage('Deploy to production'){
+
+steps{
+
+timeout(time: 3, unit: 'DAYS') {
+    input 'Waiting for approval'
+}
+   build 'deploy-to-productin'
+}
+post{
+success{
+echo 'deployment successfull'
+
+}
+failure{
+echo 'faied to deploy'
+}
+
+}
+}
 
 }
 }
