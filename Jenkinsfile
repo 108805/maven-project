@@ -16,6 +16,12 @@ failure{
 echo 'faied to archive'
 }
 }
+stage('Deploy to staging'){
+
+steps{
+   build 'deploy-to-server'
+}
+}
 }
 }
 }
